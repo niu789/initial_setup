@@ -1,12 +1,4 @@
 [general]
-CONFIG_SERVICE_WORKERS=4
-CONFIG_CONTROLLER_HOST=$HOST_IP
-CONFIG_COMPUTE_HOSTS=$HOST_IP
-CONFIG_NETWORK_HOSTS=$HOST_IP
-CONFIG_STORAGE_HOST=$HOST_IP
-CONFIG_AMQP_HOST=$HOST_IP
-CONFIG_MARIADB_HOST=$HOST_IP
-CONFIG_MONGODB_HOST=$HOST_IP
 
 # Path to a public key to install on servers. If a usable key has not
 # been installed on the remote servers, the user is prompted for a
@@ -21,7 +13,7 @@ CONFIG_DEFAULT_PASSWORD=
 # The amount of service workers/threads to use for each service.
 # Useful to tweak when you have memory constraints. Defaults to the
 # amount of cores on the system.
-CONFIG_SERVICE_WORKERS=%{::processorcount}
+CONFIG_SERVICE_WORKERS=4
 
 # Specify 'y' to install MariaDB. ['y', 'n']
 CONFIG_MARIADB_INSTALL=y
@@ -106,14 +98,14 @@ CONFIG_DEBUG_MODE=n
 
 # Server on which to install OpenStack services specific to the
 # controller role (for example, API servers or dashboard).
-CONFIG_CONTROLLER_HOST=198.27.95.33
+CONFIG_CONTROLLER_HOST=$HOST_IP
 
 # List the servers on which to install the Compute service.
-CONFIG_COMPUTE_HOSTS=198.27.95.33
+CONFIG_COMPUTE_HOSTS=$HOST_IP
 
 # List of servers on which to install the network service such as
 # Compute networking (nova network) or OpenStack Networking (neutron).
-CONFIG_NETWORK_HOSTS=198.27.95.33
+CONFIG_NETWORK_HOSTS=$HOST_IP
 
 # Specify 'y' if you want to use VMware vCenter as hypervisor and
 # storage; otherwise, specify 'n'. ['y', 'n']
@@ -149,11 +141,11 @@ CONFIG_VCENTER_CLUSTER_NAMES=
 
 # (Unsupported!) Server on which to install OpenStack services
 # specific to storage servers such as Image or Block Storage services.
-CONFIG_STORAGE_HOST=198.27.95.33
+CONFIG_STORAGE_HOST=$HOST_IP
 
 # (Unsupported!) Server on which to install OpenStack services
 # specific to OpenStack Data Processing (sahara).
-CONFIG_SAHARA_HOST=198.27.95.33
+CONFIG_SAHARA_HOST=$HOST_IP
 
 # Specify 'y' to enable the EPEL repository (Extra Packages for
 # Enterprise Linux). ['y', 'n']
@@ -290,7 +282,7 @@ CONFIG_SSL_CERT_SUBJECT_MAIL=admin@openstack-controller-ca-east.dataenligne.com
 CONFIG_AMQP_BACKEND=rabbitmq
 
 # IP address of the server on which to install the AMQP service.
-CONFIG_AMQP_HOST=198.27.95.33
+CONFIG_AMQP_HOST=$HOST_IP
 
 # Specify 'y' to enable SSL for the AMQP service. ['y', 'n']
 CONFIG_AMQP_ENABLE_SSL=n
@@ -312,7 +304,7 @@ CONFIG_AMQP_AUTH_PASSWORD=PW_PLACEHOLDER
 # installation was not specified in CONFIG_MARIADB_INSTALL, specify
 # the IP address of an existing database server (a MariaDB cluster can
 # also be specified).
-CONFIG_MARIADB_HOST=198.27.95.33
+CONFIG_MARIADB_HOST=$HOST_IP
 
 # User name for the MariaDB administrative user.
 CONFIG_MARIADB_USER=root
@@ -336,7 +328,7 @@ CONFIG_KEYSTONE_REGION=RegionOne
 CONFIG_KEYSTONE_ADMIN_TOKEN=4a296c5ce30f490b9b7733e6fd6cffe8
 
 # Email address for the Identity service 'admin' user.  Defaults to
-CONFIG_KEYSTONE_ADMIN_EMAIL=root@localhost
+CONFIG_KEYSTONE_ADMIN_EMAIL=admin@dataenligne.com
 
 # User name for the Identity service 'admin' user.  Defaults to
 # 'admin'.
@@ -360,7 +352,7 @@ CONFIG_KEYSTONE_TOKEN_FORMAT=FERNET
 CONFIG_KEYSTONE_IDENTITY_BACKEND=sql
 
 # URL for the Identity service LDAP backend.
-CONFIG_KEYSTONE_LDAP_URL=ldap://198.27.95.33
+CONFIG_KEYSTONE_LDAP_URL=ldap://$HOST_IP
 
 # User DN for the Identity service LDAP backend.  Used to bind to the
 # LDAP server if the LDAP server does not allow anonymous
@@ -746,7 +738,7 @@ CONFIG_NOVA_SCHED_CPU_ALLOC_RATIO=16.0
 
 # Overcommitment ratio for virtual to physical RAM. Specify 1.0 to
 # disable RAM overcommitment.
-CONFIG_NOVA_SCHED_RAM_ALLOC_RATIO=1.5
+CONFIG_NOVA_SCHED_RAM_ALLOC_RATIO=1.0
 
 # Protocol used for instance migration. Valid options are: tcp and
 # ssh. Note that by default, the Compute user is created with the
@@ -1256,10 +1248,10 @@ CONFIG_CEILOMETER_METERING_BACKEND=gnocchi
 CONFIG_CEILOMETER_EVENTS_BACKEND=database
 
 # IP address of the server on which to install MongoDB.
-CONFIG_MONGODB_HOST=198.27.95.33
+CONFIG_MONGODB_HOST=$HOST_IP
 
 # IP address of the server on which to install the Redis server.
-CONFIG_REDIS_HOST=198.27.95.33
+CONFIG_REDIS_HOST=$HOST_IP
 
 # Port on which the Redis server listens.
 CONFIG_REDIS_PORT=6379
