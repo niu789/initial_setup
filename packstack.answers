@@ -1,4 +1,12 @@
 [general]
+CONFIG_SERVICE_WORKERS=4
+CONFIG_CONTROLLER_HOST=$HOST_IP
+CONFIG_COMPUTE_HOSTS=$HOST_IP
+CONFIG_NETWORK_HOSTS=$HOST_IP
+CONFIG_STORAGE_HOST=$HOST_IP
+CONFIG_AMQP_HOST=$HOST_IP
+CONFIG_MARIADB_HOST=$HOST_IP
+CONFIG_MONGODB_HOST=$HOST_IP
 
 # Path to a public key to install on servers. If a usable key has not
 # been installed on the remote servers, the user is prompted for a
