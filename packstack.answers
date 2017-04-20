@@ -52,7 +52,7 @@ CONFIG_AODH_INSTALL=y
 CONFIG_GNOCCHI_INSTALL=y
 
 # Specify 'y' to install OpenStack Events Service (panko). ['y', 'n']
-CONFIG_PANKO_INSTALL=n
+CONFIG_PANKO_INSTALL=y
 
 # Specify 'y' to install OpenStack Data Processing (sahara). In case
 # of sahara installation packstack also installs heat.['y', 'n']
@@ -1245,7 +1245,7 @@ CONFIG_CEILOMETER_COORDINATION_BACKEND=redis
 # ['database', 'gnocchi']
 CONFIG_CEILOMETER_METERING_BACKEND=gnocchi
 
-CONFIG_CEILOMETER_EVENTS_BACKEND=database
+CONFIG_CEILOMETER_EVENTS_BACKEND=panko
 
 # IP address of the server on which to install MongoDB.
 CONFIG_MONGODB_HOST=$HOST_IP
@@ -1265,11 +1265,11 @@ CONFIG_AODH_KS_PW=1129cad7c509429d
 CONFIG_AODH_DB_PW=3d8680e6f4674dec
 
 # Password to use for Panko to access the database.
-CONFIG_PANKO_DB_PW=PW_PLACEHOLDER
+CONFIG_PANKO_DB_PW=Iasfk213isdi11
 
 # Password to use for Panko to authenticate with the Identity
 # service.
-CONFIG_PANKO_KS_PW=PW_PLACEHOLDER
+CONFIG_PANKO_KS_PW=idkISi59djJud873o
 
 # Password to use for OpenStack Database-as-a-Service (trove) to
 # access the database.
