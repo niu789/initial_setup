@@ -66,7 +66,7 @@ CONFIG_HEAT_INSTALL=y
 CONFIG_MAGNUM_INSTALL=y
 
 # Specify 'y' to install OpenStack Database (trove) ['y', 'n']
-CONFIG_TROVE_INSTALL=y
+CONFIG_TROVE_INSTALL=n
 
 # Specify 'y' to install OpenStack Bare Metal Provisioning (ironic).
 # ['y', 'n']
